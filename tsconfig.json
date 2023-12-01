@@ -5,6 +5,7 @@
 		"outDir": "./build",
 		"module": "ESNext",
 		"strict": true,
+		"incremental": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,

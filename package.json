@@ -1,9 +1,9 @@
 {
-  "name": "barebone-ts",
+  "name": "advent-of-code",
   "version": "1.0.0",
-  "description": "Any TypeScript project base",
+  "description": "Advent of Code solutions",
   "main": "build/index.js",
-  "repository": "git@github.com:ExposedCat/barebone-ts.git",
+  "repository": "git@github.com:ExposedCat/advent-of-code",
   "author": "Artem Prokop <artem13.prokop@gmail.com>",
   "license": "GPL-3.0-or-later",
   "private": false,
@@ -23,19 +23,19 @@
   },
   "scripts": {
     "compile": "tsc",
-    "bg:start": "npm run compile && pm2 start build/index.js --name PROJECT",
-    "bg:restart": "npm run prepare && pm2 restart PROJECT",
-    "bg:logs": "pm2 logs PROJECT --lines 10000 -f",
+    "postcompile": "mkdir -p build/inputs && ./copy-inputs",
     "start": "npm run compile && node ."
   },
   "keywords": [
-    "boilerplate",
-    "bot",
-    "typescript",
+    "advent",
+    "advent-of-code",
+    "code",
     "ts",
-    "template",
-    "configuration"
+    "solutions",
+    "typescript"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@types/node": "^20.10.2"
+  },
   "type": "module"
 }
