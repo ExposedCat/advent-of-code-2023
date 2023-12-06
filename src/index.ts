@@ -3,8 +3,9 @@ import { trebuchetCalibration } from './2023/day-1-trebuchet/solution.js'
 import { possibleGames } from './2023/day-2-cube-conundrum/solution.js'
 import { missingParts } from './2023/day-3-gear-ratios/solution.js'
 import { calculateScratchcards } from './2023/day-4-scratchcards/solution.js'
-import { lowestSeedRangeLocation } from './2023/day-5/solution2.js'
-import { lowestSeedListLocation } from './2023/day-5/solution1.js'
+import { lowestSeedRangeLocation } from './2023/day-5-if-you-give-a-seed-fertilizer/solution2.js'
+import { lowestSeedListLocation } from './2023/day-5-if-you-give-a-seed-fertilizer/solution1.js'
+import { winningPossibilities } from './2023/day-6-wait-for-it/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -20,7 +21,8 @@ const solutions = `- Day 1: Trebuchet?! (tasks 1, 2)
 - Day 2: Cube Conundrum (tasks 1, 2)
 - Day 3: Gear Ratios (tasks 1, 2)
 - Day 4: Scratchcards (tasks 1, 2)
-- Day 5: If You Give A Seed A Fertilizer (tasks 1, 2)`
+- Day 5: If You Give A Seed A Fertilizer (tasks 1, 2)
+- Day 6: Wait For It (tasks 1, 2)`
 const question = 'Enter a problem in the format `day.task` = '
 
 reader.question(`${solutions}\n\n${question}`, answer => {
@@ -49,6 +51,10 @@ reader.question(`${solutions}\n\n${question}`, answer => {
       } else {
         lowestSeedListLocation()
       }
+      break
+    }
+    case '6': {
+      winningPossibilities(task === '2')
       break
     }
     default: {
