@@ -6,6 +6,8 @@ import { calculateScratchcards } from './2023/day-4-scratchcards/solution.js'
 import { lowestSeedRangeLocation } from './2023/day-5-if-you-give-a-seed-fertilizer/solution2.js'
 import { lowestSeedListLocation } from './2023/day-5-if-you-give-a-seed-fertilizer/solution1.js'
 import { winningPossibilities } from './2023/day-6-wait-for-it/solution.js'
+import { ghostDirections } from './2023/day-8-haunted-wasteland/solution.js'
+import { camelPoker } from './2023/day-7-camel-cards/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -22,7 +24,9 @@ const solutions = `- Day 1: Trebuchet?! (tasks 1, 2)
 - Day 3: Gear Ratios (tasks 1, 2)
 - Day 4: Scratchcards (tasks 1, 2)
 - Day 5: If You Give A Seed A Fertilizer (tasks 1, 2)
-- Day 6: Wait For It (tasks 1, 2)`
+- Day 6: Wait For It (tasks 1, 2)
+- Day 7: Camel Cards (tasks 1, 2)
+- Day 8: Haunted Wasteland (tasks 1, 2)`
 const question = 'Enter a problem in the format `day.task` = '
 
 reader.question(`${solutions}\n\n${question}`, answer => {
@@ -55,6 +59,14 @@ reader.question(`${solutions}\n\n${question}`, answer => {
     }
     case '6': {
       winningPossibilities(task === '2')
+      break
+    }
+    case '7': {
+      camelPoker(task === '2')
+      break
+    }
+    case '8': {
+      ghostDirections(task === '2')
       break
     }
     default: {

@@ -1,5 +1,9 @@
 import { readInput } from '../../utils.js'
 
+const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b))
+
+const lcm = (a: number, b: number): number => (a * b) / gcd(a, b)
+
 function parseInput(input: string) {
   const [instructions, _, ...data] = input.split('\n')
   console.log()
@@ -17,12 +21,14 @@ function parseInput(input: string) {
   }
 }
 
-export async function main() {
+export async function ghostDirections(extended = false) {
   const input = await readInput(import.meta.url)
 
   const { nodes, directions } = parseInput(input)
 
-  const startingNodes = Object.keys(nodes).filter(node => node.endsWith('A'))
+  const startingNodes = extended
+    ? Object.keys(nodes).filter(node => node.endsWith('A'))
+    : ['AAA']
 
   let direction = 0
   let steps = 0
@@ -49,5 +55,14 @@ export async function main() {
     direction += 1
   }
 
-  console.log(`LCM of ${found.join(' ')}`)
+  const result = extended
+    ? found.reduce((result, number) => lcm(result, number))
+    : found[0]
+
+  if (extended) {
+    console.log(
+      '[W] This solution only work on AoC inputs. Otherwise task 2 has no fast solution'
+    )
+  }
+  console.log(result)
 }
