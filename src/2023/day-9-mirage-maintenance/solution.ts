@@ -1,7 +1,4 @@
-import { readInput } from '../../utils.js'
-
-const parseInput = (input: string) =>
-  input.split('\n').map(line => line.split(' ').map(Number))
+import { lastElement, readInput, sumBy } from '../../utils.js'
 
 function completeLine(line: number[]) {
   const result = [line]
@@ -13,7 +10,7 @@ function completeLine(line: number[]) {
         [] as number[]
       )
     )
-    last = result[result.length - 1]
+    last = lastElement(result)
   } while (!last.every(number => number === 0))
   return result
 }
@@ -27,11 +24,9 @@ const processBlock = (block: number[][], extended: boolean) =>
 export async function oasisReport(extended = false) {
   const input = await readInput(import.meta.url)
 
-  const parsed = parseInput(input)
-  const blocks = parsed.map(completeLine)
-  const sum = blocks.reduce(
-    (sum, block) => sum + processBlock(block, extended),
-    0
+  const blocks = input.map(line => completeLine(line.split(' ').map(Number)))
+  const sum = sumBy(blocks, (block: number[][]) =>
+    processBlock(block, extended)
   )
 
   console.log(`Predictions sum: ${sum}`)

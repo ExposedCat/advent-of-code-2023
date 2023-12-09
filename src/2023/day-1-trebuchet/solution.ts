@@ -12,7 +12,7 @@ export async function trebuchetCalibration(extended = false) {
     ['6', 6],
     ['7', 7],
     ['8', 8],
-    ['9', 9]
+    ['9', 9],
   ]
   if (extended) {
     mappings.push(
@@ -25,7 +25,7 @@ export async function trebuchetCalibration(extended = false) {
         ['six', 6],
         ['seven', 7],
         ['eight', 8],
-        ['nine', 9]
+        ['nine', 9],
       ] as [string, number][])
     )
   }
@@ -35,7 +35,7 @@ export async function trebuchetCalibration(extended = false) {
   console.log('=================================')
 
   let calibraionSum = 0
-  for (const line of input.split('\n')) {
+  for (const line of input) {
     const [_, __, first, last] = mappings.reduce(
       (result, mapping) => {
         const firstIndex = line.indexOf(mapping[0])
@@ -46,7 +46,7 @@ export async function trebuchetCalibration(extended = false) {
           newFirst ? firstIndex : result[0],
           newLast ? lastIndex : result[1],
           newFirst ? mapping[1] : result[2],
-          newLast ? mapping[1] : result[3]
+          newLast ? mapping[1] : result[3],
         ]
       },
       [Number.MAX_SAFE_INTEGER, -1, 0, 0]

@@ -18,11 +18,10 @@ const CATHEGORIES = [
   'location',
 ] as const
 
-function parseInput(input: string): {
+function parseInput([seedBlock, ...blocks]: string[]): {
   seeds: number[]
   cathegories: Cathegories
 } {
-  const [seedBlock, ...blocks] = input.split('\n\n')
   const seeds = seedBlock.split(': ')[1].split(' ').map(Number)
   const cathegories = blocks.reduce(
     (blocks, block) => {
@@ -63,7 +62,7 @@ function getSeedLocation(seed: number, cathegories: Cathegories) {
 }
 
 export async function lowestSeedListLocation() {
-  const input = await readInput(import.meta.url)
+  const input = await readInput(import.meta.url, '\n\n')
   const { seeds, cathegories } = parseInput(input)
   console.log('==============================')
   console.log('     Looking for seeds...')

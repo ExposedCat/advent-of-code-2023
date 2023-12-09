@@ -1,4 +1,4 @@
-import { readInput } from '../../utils.js'
+import { readInput, sumBy } from '../../utils.js'
 
 function getNumbers(line: string) {
   const parseNumbers = (index: 0 | 1) =>
@@ -77,7 +77,7 @@ export async function calculateScratchcards(extended = false) {
   )
   if (extended) {
     const cards = []
-    for (const line of input.split('\n')) {
+    for (const line of input) {
       cards.push(getNumbers(line))
     }
     const received = new Array(cards.length).fill(0).map((_, i) => i + 1)
@@ -93,9 +93,7 @@ export async function calculateScratchcards(extended = false) {
     console.log('====================')
     console.log('Calculating Prize...')
     console.log('====================')
-    const sum = input
-      .split('\n')
-      .reduce((sum, line) => sum + getResult(getNumbers(line)), 0)
+    const sum = sumBy(input, (line: string) => getResult(getNumbers(line)))
     console.log('Prize Calculated')
     console.log('====================')
     console.log()

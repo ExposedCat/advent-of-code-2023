@@ -1,9 +1,7 @@
 import { readInput } from '../../utils.js'
 
-function parseInput(input: string, extended: boolean) {
-  const result = input
-    .split('\n')
-    .map(line => line.match(/\d+/g)?.map(Number) as number[])
+function parseInput(input: string[], extended: boolean) {
+  const result = input.map(line => line.match(/\d+/g)?.map(Number) as number[])
   if (extended) {
     return result.map(line => [Number(line.join(''))])
   }

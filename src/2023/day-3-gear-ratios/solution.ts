@@ -1,4 +1,4 @@
-import { readInput } from '../../utils.js'
+import { readInput, sumBy } from '../../utils.js'
 
 type InputMap = (number | 'dot' | '*')[][]
 
@@ -16,20 +16,18 @@ function ensureHasSymbol(map: InputMap, x: number, y: number) {
   return null
 }
 
-function getMap(input: string): InputMap {
-  return input
-    .split('\n')
-    .map(line =>
-      line
-        .split('')
-        .map(character =>
-          !isNaN(Number(character))
-            ? Number(character)
-            : character === '*'
-              ? '*'
-              : 'dot'
-        )
-    )
+function getMap(input: string[]): InputMap {
+  return input.map(line =>
+    line
+      .split('')
+      .map(character =>
+        !isNaN(Number(character))
+          ? Number(character)
+          : character === '*'
+            ? '*'
+            : 'dot'
+      )
+  )
 }
 
 function getSum(map: InputMap, y: number) {
@@ -121,10 +119,8 @@ export async function missingParts(extended = false) {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠛⠛⠛⠛⠛⠛⠛⠂⠀⠀⠀⠀⠒⠛⠛⠛⠛`
     )
     console.log()
-    const sum = gears.reduce(
-      (sum, gearValues) =>
-        sum + (gearValues.length === 2 ? gearValues[0] * gearValues[1] : 0),
-      0
+    const sum = sumBy(gears, (gearValues: number[]) =>
+      gearValues.length === 2 ? gearValues[0] * gearValues[1] : 0
     )
     console.log('=================')
     console.log('All Gears Checked')
@@ -141,10 +137,8 @@ export async function missingParts(extended = false) {
 '-----' '-=-=-'`
     )
     console.log()
-    const sum = getMap(input).reduce(
-      (sum, _, y, map) => sum + getSum(map, y),
-      0
-    )
+    const map = getMap(input)
+    const sum = sumBy(map, (_, y) => getSum(map, y))
     console.log('=====================')
     console.log('Part Numbers Gathered')
     console.log('=====================')

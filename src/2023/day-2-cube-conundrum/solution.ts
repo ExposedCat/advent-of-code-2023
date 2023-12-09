@@ -1,4 +1,4 @@
-import { readInput } from '../../utils.js'
+import { readInput, sumBy } from '../../utils.js'
 
 function extractColor(pack: string, color: 'red' | 'green' | 'blue') {
   const data = pack.match(new RegExp(`(\\d+) ${color}`))
@@ -53,13 +53,9 @@ export async function possibleGames(extended = false) {
 +--------+    +----+`)
   console.log()
 
-  const sum = input
-    .split('\n')
-    .reduce(
-      (sum, line) =>
-        sum + (extended ? getGameCubesValue : getGameIdValue)(line),
-      0
-    )
+  const sum = sumBy(input, (line: string) =>
+    (extended ? getGameCubesValue : getGameIdValue)(line)
+  )
 
   console.log('===========================')
   console.log('Cube Possibilities Resolved')

@@ -4,9 +4,7 @@ const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b))
 
 const lcm = (a: number, b: number): number => (a * b) / gcd(a, b)
 
-function parseInput(input: string) {
-  const [instructions, _, ...data] = input.split('\n')
-  console.log()
+function parseInput([instructions, _, ...data]: string[]) {
   const nodes = data.map(node => {
     const [name, directions] = node.split(' = ')
     const [left, right] = directions.slice(1, -1).split(', ')
@@ -23,7 +21,6 @@ function parseInput(input: string) {
 
 export async function ghostDirections(extended = false) {
   const input = await readInput(import.meta.url)
-
   const { nodes, directions } = parseInput(input)
 
   const startingNodes = extended

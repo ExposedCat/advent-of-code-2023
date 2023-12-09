@@ -1,4 +1,4 @@
-import { readInput } from '../../utils.js'
+import { readInput, sumBy } from '../../utils.js'
 
 const values: Record<string, number> = {
   A: 14,
@@ -25,7 +25,13 @@ function compareHands(left: number[], right: number[]) {
   return 0
 }
 
-function parseHand(line: string, jokersBehaviour: '11' | 'cast') {
+type Hand = {
+  cards: number[]
+  tiers: number[]
+  bid: number
+}
+
+function parseHand(line: string, jokersBehaviour: '11' | 'cast'): Hand {
   const [hand, bid] = line.split(' ')
   let cleanHand = hand
   let jokers = 0
@@ -73,7 +79,6 @@ function parseHand(line: string, jokersBehaviour: '11' | 'cast') {
 export async function camelPoker(extended = false) {
   const input = await readInput(import.meta.url)
   const hands = input
-    .split('\n')
     .map(hand => parseHand(hand, extended ? 'cast' : '11'))
     .sort((left, right) => {
       if (compareHands(left.tiers, right.tiers)) {
@@ -89,9 +94,10 @@ export async function camelPoker(extended = false) {
       return 0
     })
 
-  const winnings = hands.reduce((total, hand, position) => {
-    return total + hand.bid * (position + 1)
-  }, 0)
+  const winnings = sumBy(
+    hands,
+    (hand: Hand, position) => hand.bid * (position + 1)
+  )
 
   console.log(`Winnings are ${winnings}`)
 }
