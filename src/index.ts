@@ -8,6 +8,7 @@ import { lowestSeedListLocation } from './2023/day-5-if-you-give-a-seed-fertiliz
 import { winningPossibilities } from './2023/day-6-wait-for-it/solution.js'
 import { ghostDirections } from './2023/day-8-haunted-wasteland/solution.js'
 import { camelPoker } from './2023/day-7-camel-cards/solution.js'
+import { oasisReport } from './2023/day-9-mirage-maintenance/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -26,7 +27,8 @@ const solutions = `- Day 1: Trebuchet?! (tasks 1, 2)
 - Day 5: If You Give A Seed A Fertilizer (tasks 1, 2)
 - Day 6: Wait For It (tasks 1, 2)
 - Day 7: Camel Cards (tasks 1, 2)
-- Day 8: Haunted Wasteland (tasks 1, 2)`
+- Day 8: Haunted Wasteland (tasks 1, 2)
+- Day 9: Mirage Maintenance (tasks 1, 2)`
 const question = 'Enter a problem in the format `day.task` = '
 
 reader.question(`${solutions}\n\n${question}`, answer => {
@@ -67,6 +69,10 @@ reader.question(`${solutions}\n\n${question}`, answer => {
     }
     case '8': {
       ghostDirections(task === '2')
+      break
+    }
+    case '9': {
+      oasisReport(task === '2')
       break
     }
     default: {
