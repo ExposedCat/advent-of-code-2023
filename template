@@ -1,0 +1,13 @@
+import { readInput } from '../../utils.js'
+
+function parseInput(input: string[]) {
+  return input
+}
+
+export async function main(extended = false) {
+  const input = await readInput(import.meta.url)
+
+  const result = parseInput(input)
+
+  console.log(`Result: ${result}`)
+}

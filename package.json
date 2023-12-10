@@ -2,7 +2,7 @@
   "name": "advent-of-code",
   "version": "1.0.0",
   "description": "Advent of Code solutions",
-  "main": "build/index.js",
+  "main": "build/src/index.js",
   "repository": "git@github.com:ExposedCat/advent-of-code",
   "author": "Artem Prokop <artem13.prokop@gmail.com>",
   "license": "GPL-3.0-or-later",
