@@ -9,6 +9,9 @@ import { winningPossibilities } from './2023/day-6-wait-for-it/solution.js'
 import { ghostDirections } from './2023/day-8-haunted-wasteland/solution.js'
 import { camelPoker } from './2023/day-7-camel-cards/solution.js'
 import { oasisReport } from './2023/day-9-mirage-maintenance/solution.js'
+import { oasisReport as day101 } from './2023/day-10/solution.js'
+import { oasisReport as day102 } from './2023/day-10/solution2.js'
+import { cosmicExpansion } from './2023/day-11-cosmic-expansion/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -28,7 +31,9 @@ const solutions = `- Day 1: Trebuchet?! (tasks 1, 2)
 - Day 6: Wait For It (tasks 1, 2)
 - Day 7: Camel Cards (tasks 1, 2)
 - Day 8: Haunted Wasteland (tasks 1, 2)
-- Day 9: Mirage Maintenance (tasks 1, 2)`
+- Day 9: Mirage Maintenance (tasks 1, 2)
+- Day 10: [WIP] Pipe Maze (tasks 1, 2)
+- Day 11: Cosmic Expansion (tasks 1, 2)`
 const question = 'Enter a problem in the format `day.task` = '
 
 reader.question(`${solutions}\n\n${question}`, answer => {
@@ -73,6 +78,18 @@ reader.question(`${solutions}\n\n${question}`, answer => {
     }
     case '9': {
       oasisReport(task === '2')
+      break
+    }
+    case '10': {
+      if (task === '2') {
+        day102()
+      } else {
+        day101()
+      }
+      break
+    }
+    case '11': {
+      cosmicExpansion(task === '2')
       break
     }
     default: {
