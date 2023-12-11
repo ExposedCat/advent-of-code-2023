@@ -9,18 +9,32 @@ Solutions available:
 - [2023 - Day 6 - Wait For It](https://adventofcode.com/2023/day/6)
 - [2023 - Day 7 - Camel Cards](https://adventofcode.com/2023/day/7)
 - [2023 - Day 8 - Haunted Wasteland](https://adventofcode.com/2023/day/8)
+- [2023 - Day 9 - Mirage Maintenance](https://adventofcode.com/2023/day/9)
+- [2023 - Day 10 - Pipe Maze](https://adventofcode.com/2023/day/10)
+- [2023 - Day 11 - Cosmic Expansion](https://adventofcode.com/2023/day/11)
 
 <pre>
-                               . ' '' '''...     
-                            '     *     ..  ''.    
-                         '            ~'  '.~  '.
-                                  ~     '. *'.~ :  
-                 ...'''''          .''.~  '..' .'
-              .''          .   ~..'*   '. ~ ..'    
+            ..                                   
+    .'                                           
+                                                 
+.'      * .         '                            
+'   .     '.            '                        
+    .'*                                          
+    '..''''.*.''  ..'' ''...                     
+          .'''~ ~ ~ ~   ### ''.                  
+        .' ~  ,* ~ ~ ~ ~ ##### '.                
+        : ~ '(~), ~ * ~ ~ ~ ### :                
+        '. ~ " ' ~ ~ ~   ##### .'                
+          '.. ~ ~ * ~ ##### ..'.'''''''''...     
+             '''.........'''' ~ .'*. ~  ..  ''.  
+                        .' ~    '...' ~'  '.~  '.
+                        :         ~     '. *'.~ :
+                 ...'''''.         .''.~  '..' .'
+              .''         '..  ~..'*   '. ~ ..'  
             .'               '''../......'''     
             :             /\\    -/  :            
             '.            -   - /  .'            
-              '..    -     -   *..'                
-    ----@        '''..*......'''                   
-  * ! /^\\                                         
+              '..    -     -   *..'              
+    ----@        '''..*......'''                 
+  * ! /^\\                                                             
 </pre>
