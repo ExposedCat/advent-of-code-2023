@@ -12,6 +12,7 @@ import { oasisReport } from './2023/day-9-mirage-maintenance/solution.js'
 import { oasisReport as day101 } from './2023/day-10/solution.js'
 import { oasisReport as day102 } from './2023/day-10/solution2.js'
 import { cosmicExpansion } from './2023/day-11-cosmic-expansion/solution.js'
+import { lensLibrary } from './2023/day-15/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -33,7 +34,11 @@ const solutions = `- Day 1: Trebuchet?! (tasks 1, 2)
 - Day 8: Haunted Wasteland (tasks 1, 2)
 - Day 9: Mirage Maintenance (tasks 1, 2)
 - Day 10: [WIP] Pipe Maze (tasks 1, 2)
-- Day 11: Cosmic Expansion (tasks 1, 2)`
+- Day 11: Cosmic Expansion (tasks 1, 2)
+- Day 12: Hot Springs (tasks 1, 2)
+- Day 13: Point of Incidence (tasks 1, 2)
+- Day 14: Parabolic Reflector Dish (tasks 1, 2)
+- Day 15: Lens Library (tasks 1, 2)`
 const question = 'Enter a problem in the format `day.task` = '
 
 reader.question(`${solutions}\n\n${question}`, answer => {
@@ -90,6 +95,22 @@ reader.question(`${solutions}\n\n${question}`, answer => {
     }
     case '11': {
       cosmicExpansion(task === '2')
+      break
+    }
+    case '12': {
+      console.log('This solution is not done by ExposedCat yet..')
+      break
+    }
+    case '13': {
+      console.log('This solution is not done by ExposedCat yet..')
+      break
+    }
+    case '14': {
+      console.log('This solution is not done by ExposedCat yet..')
+      break
+    }
+    case '15': {
+      lensLibrary(task === '2')
       break
     }
     default: {
