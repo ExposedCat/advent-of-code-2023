@@ -14,6 +14,7 @@ import { oasisReport as day102 } from './2023/day-10/solution2.js'
 import { cosmicExpansion } from './2023/day-11-cosmic-expansion/solution.js'
 import { lensLibrary } from './2023/day-15/solution.js'
 import { reflectorDish } from './2023/day-14/solution.js'
+import { incidencePoint } from './2023/day-13-point-of-incidence/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -103,7 +104,7 @@ reader.question(`${solutions}\n\n${question}`, answer => {
       break
     }
     case '13': {
-      console.log('This solution is not done by ExposedCat yet..')
+      incidencePoint(task === '2')
       break
     }
     case '14': {
