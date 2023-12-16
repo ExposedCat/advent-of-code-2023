@@ -60,7 +60,7 @@ function launchBeam(map: string[], energyMap: Cell[][], beam: Beam) {
     cell.energized = true
     if (!cell[direction]) {
       cell[direction] = true
-      beams.push(...launchBeam(map, energyMap, [x, y, direction]))
+      beams.push(...getNextBeams([x, y, direction], map))
     }
   }
   return beams
@@ -83,9 +83,6 @@ function getEnergizedNumber(map: string[], beam: Beam) {
 export async function energizedCells(extended = false) {
   const map = await readInput(import.meta.url, '\n')
   if (extended) {
-    console.warn(
-      '[!] The solution is far from being optimal - this may take a few minutes to calculate'
-    )
     let max = 0
     for (let y = 0; y < map.length; ++y) {
       for (const beam of [
@@ -115,5 +112,3 @@ export async function energizedCells(extended = false) {
     console.log(`There are ${number} emergized cells`)
   }
 }
-
-energizedCells()
