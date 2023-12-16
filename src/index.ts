@@ -15,6 +15,7 @@ import { cosmicExpansion } from './2023/day-11-cosmic-expansion/solution.js'
 import { lensLibrary } from './2023/day-15/solution.js'
 import { reflectorDish } from './2023/day-14/solution.js'
 import { incidencePoint } from './2023/day-13-point-of-incidence/solution.js'
+import { energizedCells } from './2023/day-16-the-floor-will-be-lava/solution.js'
 
 console.log('===========================')
 console.log("ExposedCat's Advent of Code")
@@ -40,7 +41,8 @@ const solutions = `- Day 1: Trebuchet?! (tasks 1, 2)
 - Day 12: Hot Springs (tasks 1, 2)
 - Day 13: Point of Incidence (tasks 1, 2)
 - Day 14: Parabolic Reflector Dish (tasks 1, 2)
-- Day 15: Lens Library (tasks 1, 2)`
+- Day 15: Lens Library (tasks 1, 2)
+- Day 16: The Floor Will Be Lava (tasks 1, 2)`
 const question = 'Enter a problem in the format `day.task` = '
 
 reader.question(`${solutions}\n\n${question}`, answer => {
@@ -113,6 +115,10 @@ reader.question(`${solutions}\n\n${question}`, answer => {
     }
     case '15': {
       lensLibrary(task === '2')
+      break
+    }
+    case '16': {
+      energizedCells(task === '2')
       break
     }
     default: {
